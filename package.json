@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx parcel ./index.html --open",
+    "build": "npx parcel build ./index.html --public-url '.'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/leaflet": "^1.9.12",
     "leaflet": "^1.9.4",
+    "parcel-bundler": "^1.12.5",
     "typescript": "^5.4.5"
   }
 }
