@@ -6,15 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx parcel ./index.html --open",
-    "build": "npx parcel build ./index.html --public-url '.'"
+    "build": "npx parcel build ./index.html --public-url '.'",
+    "lint": "npx eslint . --ext .ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/leaflet": "^1.9.12",
     "leaflet": "^1.9.4",
-    "parcel-bundler": "^1.12.5",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.12",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "eslint": "^8.57.0",
+    "parcel-bundler": "^1.12.5"
   }
 }
