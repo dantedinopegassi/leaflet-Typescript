@@ -1,5 +1,6 @@
 import { control, Map, Popup } from "leaflet";
 import { pop, customTile, baselayers } from "./options";
+import { watermark } from "./watermark";
 
 const mymap = new Map("map").setView(
   [-31.598876363018576, -60.70358276367188],
@@ -8,7 +9,7 @@ const mymap = new Map("map").setView(
 
 const base = baselayers();
 
-const tile1 = base.a;
+
 const tile3 = customTile("https://sig.energia.gob.ar/wmsenergia?");
 const pop1 = pop(mymap, [-31.598876363018576, -60.70358276367188]);
 const baseAdd = {
@@ -16,12 +17,14 @@ const baseAdd = {
   tile2Add : base.b.addTo(mymap)
 }
 const controlcito = control.layers(baseAdd);
+const marquita = watermark().setPosition("bottomleft");
 
-tile1.addTo(mymap);
+//tile1.addTo(mymap);
 // tile2.addTo(mymap);
 tile3.addTo(mymap);
 pop1.addTo(mymap);
 controlcito.addTo(mymap);
+marquita.addTo(mymap);
 
 mymap.on("click", (e) => {
   // alert(e.latlng.lat + "\n" + e.latlng.lng);
