@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx parcel ./index.html --open",
+    "start": "npx parcel ./proyectos/01/02-ts-first-map/index.html --open",
     "build": "npx parcel build ./index.html --public-url '.'",
     "lint": "npx eslint . --ext .ts"
   },
@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.2",
     "leaflet": "^1.9.4",
     "typescript": "^5.4.5"
   },
