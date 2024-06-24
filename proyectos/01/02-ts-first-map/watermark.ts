@@ -1,14 +1,34 @@
-import { Control, DomUtil } from "leaflet";
+import { Control, ControlPosition, DomUtil, Util } from "leaflet";
+import logotipo from "../../../assets/images/dog-2.webp";
 
 const Watermark = Control.extend({
-  onAdd: () => {
+  options: {
+    position: "bottomleft",
+    img: logotipo,
+    border: true,
+  },
+
+  initialize: function (options: {
+    position: ControlPosition;
+    img: string;
+    border: boolean;
+  }) {
+    Util.setOptions(this, options);
+  },
+
+  onAdd: function () {
     const img = DomUtil.create("img");
 
-    img.src = "../../../assets/images/dog-2.webp";
+    img.src = this.options.img;
     img.style.width = "100px";
 
     return img;
   },
+  onRemove: function () {},
 });
 
-export const watermark = () => new Watermark();
+export const watermark = (options?: {
+  position?: ControlPosition;
+  img?: string;
+  border?: boolean;
+}) => new Watermark(options);
