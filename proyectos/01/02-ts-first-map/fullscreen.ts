@@ -11,17 +11,29 @@ const Fullscreen = Control.extend({
 
   onAdd: function () {
     const container = DomUtil.create("input", "fullscreen");
-    container.type="button";
-    container.style.width="30px";
+    container.type = "button";
+    container.style.width = "30px";
 
     container.onclick = () => {
-        alert("hiciste click wachin");
+      // alert("hiciste click wachin");
+      toggleFullscreen();
+    };
+
+    const toggleFullscreen = () => {
+      const map = document.getElementById('map');
+      if (map != null) {
+        if (!document.fullscreenElement) {
+          map.requestFullscreen();
+        } else {
+          document.exitFullscreen();
+        }
+      }
     };
 
     return container;
   },
 
-  onRemove: function () {},
+  onRemove: function () { },
 });
 
 export const fullscreen = (options?: { position?: ControlPosition }) =>
